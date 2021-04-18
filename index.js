@@ -4,6 +4,7 @@ const express = require("express");
 const app = express();
 const MongoDB = require("./MongoDB.js");
 const db = new MongoDB("invoices");
+const PORT = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(express.json());
@@ -75,4 +76,4 @@ app.delete("/invoices/:id", async (req, res) => {
   }
 });
 
-app.listen(3001);
+app.listen(PORT);
